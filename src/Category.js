@@ -19,9 +19,9 @@ class Catgegory extends React.Component {
                         {books.map((book) => (
                             <li key={uuidv4()}>
                                 <Book
-                                    bookCoverURL={book.bookCoverURL}
+                                    imageLink={book.imageLinks.thumbnail}
                                     title={book.title}
-                                    author={book.author}
+                                    authors={book.authors}
                                 />
                             </li>
                         ))}
