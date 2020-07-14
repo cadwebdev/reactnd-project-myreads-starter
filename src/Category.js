@@ -6,7 +6,8 @@ import { v4 as uuidv4 } from 'uuid'
 class Catgegory extends React.Component {
     static propTypes = {
         name: propTypes.string.isRequired,
-        books: propTypes.array.isRequired
+        books: propTypes.array.isRequired,
+        onChangeShelf: propTypes.func.isRequired
     }
 
     render() {
@@ -19,9 +20,12 @@ class Catgegory extends React.Component {
                         {books.map((book) => (
                             <li key={uuidv4()}>
                                 <Book
-                                    imageLink={book.imageLinks.thumbnail}
-                                    title={book.title}
-                                    authors={book.authors}
+                                    book={book}
+                                    // imageLink={book.imageLinks.thumbnail}
+                                    // title={book.title}
+                                    // authors={book.authors}
+                                    // shelf={book.shelf}
+                                    onChangeShelf={this.props.onChangeShelf}
                                 />
                             </li>
                         ))}
