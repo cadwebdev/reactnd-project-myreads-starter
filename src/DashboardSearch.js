@@ -20,7 +20,6 @@ class DashboardSearch extends React.Component {
     }
 
     updateQuery = (query) => {
-        // const searchTerm = query.trim()
         this.setState(() => ({
             query: query
         }))
