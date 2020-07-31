@@ -17,16 +17,9 @@ class Catgegory extends React.Component {
                 <h2 className="bookshelf-title">{name}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {books.map((book) => (
+                        {books.filter(book => book.hasOwnProperty('imageLinks') && book.hasOwnProperty('authors')).map((book) => (
                             <li key={uuidv4()}>
-                                <Book
-                                    book={book}
-                                    // imageLink={book.imageLinks.thumbnail}
-                                    // title={book.title}
-                                    // authors={book.authors}
-                                    // shelf={book.shelf}
-                                    onChangeShelf={this.props.onChangeShelf}
-                                />
+                                <Book book={book} onChangeShelf={this.props.onChangeShelf} />
                             </li>
                         ))}
                     </ol>

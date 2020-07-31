@@ -5,7 +5,6 @@ class BookShelfChanger extends React.Component {
 
     static propTypes = {
         book: propTypes.object.isRequired,
-        // shelf: propTypes.string.isRequired,
         onChangeShelf: propTypes.func.isRequired
     }
 
@@ -15,7 +14,7 @@ class BookShelfChanger extends React.Component {
 
     render() {
         return (
-            <div className="book-shelf-changer" >
+            < div className="book-shelf-changer" >
                 <select value={this.props.book.shelf} onChange={(e) => this.handleChange(e)}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
@@ -23,7 +22,7 @@ class BookShelfChanger extends React.Component {
                     <option value="read">Read</option>
                     <option value="none">None</option>
                 </select>
-            </div>
+            </div >
         )
     }
 }

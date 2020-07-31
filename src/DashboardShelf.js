@@ -37,6 +37,7 @@ class DashboardShelf extends React.Component {
                 </div>
                 <div className="list-books-content">
                     <div>
+                        {console.log(this.state.books)}
                         <Catgegory name="Currently Reading" books={this.state.books.filter(book => book.shelf === 'currentlyReading')} onChangeShelf={this.updateShelf} />
                         <Catgegory name="Want to Read" books={this.state.books.filter(book => book.shelf === 'wantToRead')} onChangeShelf={this.updateShelf} />
                         <Catgegory name="Read" books={this.state.books.filter(book => book.shelf === 'read')} onChangeShelf={this.updateShelf} />
